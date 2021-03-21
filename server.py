@@ -23,7 +23,7 @@ class AgentElement(TextElement):
 
     def render(self, model):
         text_1 = "Number of agents: " + str(model.schedule.get_agent_count()) + "   "
-        text_2 = "Average Speed " + str(model.averagespeed) + "   "
+        text_2 = "Average Speed " + str(model.average_speed) + "   "
         return text_1 + text_2
 
 
@@ -37,7 +37,7 @@ def vehicle_draw(agent):
 
     if agent.speed == 0:
         color = STOPPED_COLOR
-    elif agent.speed > int(agent.maxspeed/2):
+    elif agent.speed > int(agent.max_speed/2):
         color = FAST_COLOR
     else:
         color = SLOW_COLOR
@@ -48,14 +48,14 @@ def vehicle_draw(agent):
 # define the elements of the visualisation
 agent_element = AgentElement()
 canvas_element = CanvasGrid(vehicle_draw, 60, 1, 1000, 20)
-speed_chart = ChartModule([{"Label": "AverageSpeed", "Color": "Black"}])
+speed_chart = ChartModule([{"Label": "Average_Speed", "Color": "Black"}])
 
 # define the parameters of the model
 model_params = {
     "height": 1,
     "width": 60,
-    "density": UserSettableParameter("slider", "Vehicle density", 0.2, 0.02, 0.4, 0.02),
-    "generalmaxspeed": UserSettableParameter("slider", "Max speed", 4, 1, 6, 1),
+    "vehicle_quantity": UserSettableParameter("slider", "Vehicle Quantity", 5, 1, 30, 1),
+    "general_max_speed": UserSettableParameter("slider", "Max speed", 4, 1, 6, 1),
 }
 
 # instantiate server

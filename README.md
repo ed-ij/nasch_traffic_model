@@ -14,8 +14,8 @@ This isn't strictly necessary for non-multithreaded processes but ensures that v
 
 The model is written in Python using the Mesa ABM framework which allows for easy visualisation.
 
-The vehicle density and the max speed are adjustable parameters in the visualisation. 
-By default, the vehicle density is 0.2, and the max speed is 4.
+The vehicle quantity and the max speed are adjustable parameters in the visualisation. 
+By default, the vehicle quantity is 5, and the max speed is 4.
 
 This implementation was developed by studying Jackie Kazil's Mesa implementation of the Schelling Segregation Model.
 
@@ -40,7 +40,7 @@ To run the model interactively, run the following in this directory:
 ```
  
 Then open your browser to [http://127.0.0.1:8555/](http://127.0.0.1:8555/) (some interpreters/IDEs will do this for you). 
-To run the model press Reset, adjust the frame rate, vehicle density and max speed as required, then press Start.
+To run the model press Reset, adjust the frame rate, vehicle vehicle_quantity and max speed as required, then press Start.
 
 ## Files
 
